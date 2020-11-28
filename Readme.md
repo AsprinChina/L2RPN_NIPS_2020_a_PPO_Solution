@@ -22,8 +22,7 @@ To deal with the above two issues, we propose a "*Teacher-Tutor-Junior Student-S
 By calling *Teacher* Strategy in thousands of scenarios, we obtain an action library consisting of actions chosen in different scenarios. In the following procedure, we treat this action library as the action space.  
 In our final solution, we filter out some actions that occur less frequently, and the size of final action library is 208. It well solves the issue of **humongous action space**.
 + Tutor: expert agent  
-*Tutor* is also a greedy strategy similar to *Teacher*, the difference is that its search space is the reduced action space (~200 in our solution), rather than the original action space. As a result, *Tutor* has a far higher decision-making speed.  
-**In this competition, the *Tutor* strategy can achieve a score of 40~45.**
+*Tutor* is also a greedy strategy similar to *Teacher*, the difference is that its search space is the reduced action space (208 in our solution), rather than the original action space. As a result, *Tutor* has a far higher decision-making speed. **In this competition, the *Tutor* strategy can achieve a score of 40~45.**
 + Junior Student: imitation learning  
 To address the second challenge, we pre-train a neural network whose input is observation and output is probability distribution of all actions (i.e., *Actor*), to imitate the expert agent *Tutor*. We call this agent as *Junior Student*.  
 Specifically, we feed *Tutor* different observations, and obtain corresponding greedy actions. Then, construct the labels by setting the probability of the chosen action as 1 while others as 0. Finally, train the neural network in a supervised learning manner, with the dataset in the form of (*feature*: observation, *label*: action probability).  
