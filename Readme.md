@@ -37,27 +37,27 @@ See more technical details in this [video]() (we will release it after NeurIPS 2
 ## Usage
 If you just want to see the final results, go to step 5 directly. **Tuned model** has been provided.  
 * step 1. Teacher Module: generate action space  
-  Go to './Teacher/' and run `Teacher1.py` and `Teacher2.py` for enough long time. 
+  Go to `./Teacher/` and run `Teacher1.py` and `Teacher2.py` for enough long time. 
   
   ```
   cd ./Teacher
   python Teacher1.py
   python Teacher2.py
   ```
-  Then, two csv files are generated. Afterward, run `Generate_action_space.py` to generate action space as .npy file at './ActionSpace/'.
+  Then, two csv files are generated. Afterward, run `Generate_action_space.py` to generate action space as .npy file at `./ActionSpace/`.
   ```
   python Generate_action_space.py
   ```
   
 * step 2. Tutor Module: an expert agent  
-  Go to './Tutor/' and run `Generate_teaching_dataset.py` which calls **Tutor** to generate a dataset recording its observation and action. 
-```
+  Go to `./Tutor/` and run `Generate_teaching_dataset.py` which calls **Tutor** to generate a dataset recording its observation and action. 
+  ```
   cd ./Tutor
   python Generate_teaching_dataset.py
-```
+  ```
 
 * step 3. JuniorStudent Module: imitation to Tutor  
-  Go to './JuniorStudent/' and run `JuniorStudent.py` to fit the dataset generated in step.2. It should run with an argument: 'Train' for dataset fitting, 'Test' for accuracy measurement, and 'Convert' for converting the tf model to that recongnized by **Senior Student**. Task-Train and task-Convert are necessary.  
+  Go to `./JuniorStudent/` and run `JuniorStudent.py` to fit the dataset generated in step.2. It should run with an argument: 'Train' for dataset fitting, 'Test' for accuracy measurement, and 'Convert' for converting the tf model to that recongnized by **Senior Student**. Task-Train and task-Convert are necessary.  
   ```
   cd ./JuniorStudent
   python JuniorStudent.py Train
@@ -65,7 +65,7 @@ If you just want to see the final results, go to step 5 directly. **Tuned model*
   ```
 
 * step 4. SeniorStudent Module: RL agent training  
-  Go to './SeniorStudent/' and run `SeniorStudent.py` to train the RL agent, whose model files during the training process are saved at './SeniorStudent/ckpt/'. Choose a model with good performance to cover the baseline model in './submission/ppo-ckpt/'.  
+  Go to `./SeniorStudent/` and run `SeniorStudent.py` to train the RL agent, whose model files during the training process are saved at `./SeniorStudent/ckpt/`. Choose a model with good performance to cover the baseline model in `./submission/ppo-ckpt/`.  
   ```
   cd ./SeniorStudent
   python SeniorStudent.py
@@ -77,7 +77,7 @@ If you just want to see the final results, go to step 5 directly. **Tuned model*
   python runner.py
   ```
 
-If you want to see its on-line performance, make the zip file of './submission/' according to [L2RPN-Competition's guidance](https://competitions.codalab.org/competitions/25426#learn_the_details-evaluation), and submit it at [the website](https://competitions.codalab.org/competitions/25426#participate).  
+If you want to see its on-line performance, make the zip file of `./submission/` according to [L2RPN-Competition's guidance](https://competitions.codalab.org/competitions/25426#learn_the_details-evaluation), and submit it at [the website](https://competitions.codalab.org/competitions/25426#participate).  
 
 ## Environment Requirement
 ```
