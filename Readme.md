@@ -17,6 +17,9 @@ The action space involves the combination explosion issue. In this competition, 
 To some extent, a power system is a fragile system: any mistake in dispatch may lead to a cascading failure (**blackout**), which means a game over in the competition. It decides the RL agent is hard to learn from the early random exploration, because it probably finds almost all actions lead to a negative reward!  
 
 To deal with the above two issues, we propose a "*Teacher-Tutor-Junior Student-Senior Student*" framework in our solution.
+
+![illustration](./img/illustration.png)
+
 + Teacher: action space generation  
 *Teacher* is a strategy that finds a greedy action to minimize the maximum load rate (power flow/capacity) of all lines through enumurating all possible actions (~60k). Obviously, it is a time-consuming expert strategy.  
 By calling *Teacher* Strategy in thousands of scenarios, we obtain an action library consisting of actions chosen in different scenarios. In the following procedure, we treat this action library as the action space.  
