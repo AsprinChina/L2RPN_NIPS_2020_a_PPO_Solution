@@ -35,7 +35,7 @@ To achieve a better performance than *Tutor*, we build a **PPO** model named *Se
 Different from *Tutor* considers the short-term reward only, *Senior Student* focuses on the long-term reward and therefore performs better in the competition. **The *Senior Student* strategy can achieve a score of ~50**.  
 It is worth noting that ***Senior Student* faces a risk of overfitting**.
 
-See more technical details in this [video]() (we will release it after NeurIPS 2020 Conference).
+See more technical details in this [video](https://drive.google.com/file/d/1dnq-QgpAVMpWuSQRZPrVzunIkaae7SGW/preview) (released, click to see).
 
 ## Usage
 If you just want to see the final results, go to step 5 directly. **Tuned model** has been provided.  
