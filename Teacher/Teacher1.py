@@ -100,7 +100,7 @@ if __name__ == "__main__":
                 if done:
                     break
                 # disconnect the targeted line
-                new_line_status_array = np.zeros(obs.rho.shape)
+                new_line_status_array = np.zeros(obs.rho.shape, dtype=np.int)
                 new_line_status_array[line_to_disconnect] = -1
                 action = env.action_space({"set_line_status": new_line_status_array})
                 obs, reward, done, _ = env.step(action)
