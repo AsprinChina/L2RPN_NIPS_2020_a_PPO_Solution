@@ -28,7 +28,7 @@ def read_data(tabs):
 def filter_data(data):
     data['del'] = False
     for row in range(len(data) - 1):
-        if data.iloc[row, 12] - data.iloc[row + 1, 14] < 0.02:
+        if data.iloc[row, 12] - data.iloc[row, 14] < 0.02:
             # this action decreases rho less than 2%
             data.iloc[row, -1] = True
         if data.iloc[row, 7] == 'None':
